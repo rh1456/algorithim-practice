@@ -1,7 +1,10 @@
-const main = () => {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
+// fizz buzz practice//
+function fizzBuzz(num) {
+  for (var i = 1; i <= num; i++) {
+    if (i % 15 === 0) console.log('FizzBuzz')
+    else if (i % 3 === 0) console.log('Fizz')
+    else if (i % 5 === 0) console.log('Buzz')
+    else console.log(i)
   }
 }
-
-document.addEventListener('DOMContentLoaded', main)
+fizzBuzz(30)
