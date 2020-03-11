@@ -15,10 +15,18 @@ function harmlessRansomNote(noteText, magazineText) {
   var magazineObj = {}
 
   // looping through every word in our magazine array and we want to place every word we come across onto our magazine object and keep count of how many times that word is present
+  // we are checking to see if the current word is a property on a magazine object
   magazineArr.forEach(word => {
     if (!magazineObj[word]) magazineObj[word] = 0
     magazineObj[word]++
   })
-  console.log(magazineObj)
+
+  var noteIsPossible = true
+  noteArr.forEach(word => {
+    if (magazineObj[word]) {
+      magazineObj[word]--
+      if (magazineObj[word] < 0) noteIsPossible = false
+    } else noteIsPossible = false
+  })
+  return noteIsPossible
 }
-harmlessRansomNote('', 'this is all the magazine text in the magazine')
