@@ -8,11 +8,13 @@
 //   }
 // }
 // fizzBuzz(30)
+
 function harmlessRansomNote(noteText, magazineText) {
   var noteArr = noteText.split(' ')
-  var magazineArr = magazineText.split('')
+  var magazineArr = magazineText.split(' ')
   var magazineObj = {}
 
+  // looping through every word in our magazine array and we want to place every word we come across onto our magazine object and keep count of how many times that word is present
   magazineArr.forEach(word => {
     if (!magazineObj[word]) magazineObj[word] = 0
     magazineObj[word]++
